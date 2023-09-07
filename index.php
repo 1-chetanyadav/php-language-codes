@@ -1,3 +1,37 @@
+<?php
+$insert=false;
+if(isset($_POST['name'])) {
+    
+
+    $server ="localhost";
+ $username="root";
+ $password="";
+ $con = mysqli_connect($server, $username, $password);
+
+ if(!$con){
+    die("connection failed". mysqli_connect_error());
+ }
+ //echo "sucess";
+ $name = $_POST['name'];
+ $roll_no = $_POST['roll_no'];
+ $Email = $_POST['Email'];
+ $sql = "INSERT INTO `formbca`.`form` ( `name` , `roll_no` , `Email` , `dt` )  VALUES 
+ ('$name' , '$roll_no' , '$Email' , current_timestamp());";
+ 
+ //echo $sql;
+ 
+ if($con->query($sql)==true){
+     //echo "sucessful inserted";
+     $insert = true;
+    }
+ else{
+       echo "Unsucessful Inserted $sql <br> $con->error";
+     }
+ $con->close();
+} 
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,6 +46,11 @@
 </head>
 
 <body>
+<?php
+    if($insert == true){
+        echo "thanks";
+    }
+    ?>
     <div class="main">
         <img src="lnct_mca.jpg" alt="bg" style=" position: absolute;
         width: 100%;
@@ -26,9 +65,10 @@
             <div class="form">
                 <form action="index.php" method="post">
                     <!-- <label for="form"></label> -->
-                    <input type="text" name="name : " placeholder="Name" require>
-                    <input type="text" name="roll no : " placeholder="Roll no" require>
-                    <input type="text" name="Email : " placeholder="Email" require>
+                    <input type="text" id="name"  name="name" placeholder="Name" require>
+                    <input type="text" id="roll_no"  name="roll_no" placeholder="Roll no" require>
+                    <input type="text" id="Email"  name="Email" placeholder="Email" require>
+                    <!-- <input type="submit"  id="submit" name="submit" value="submit"> -->
                     <button class="btn">Submit</button>
                 </form>
             </div>
