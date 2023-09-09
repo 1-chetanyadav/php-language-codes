@@ -10,11 +10,17 @@ margin: 0px;
     position: absolute;
     width: 100%;
 }
+.main{
+    margin: 0%;
+    padding: 0%;
+}
+
 .main2{
     max-width: 60vh;
     padding: 15vh;
     align-items: center;
-    margin-left: 40vh;
+    margin-left: 50vh;
+    margin-top: -3vh;
    
 }
 input{
