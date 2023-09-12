@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,18 +8,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<!-- <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300&display=swap" rel="stylesheet"> -->
+
 </head>
 
 <body>
+
     <div class="main">
         <img src="lnct_mca.jpg" alt="bg" style=" position: absolute;
         width: 100%;
         z-index: -1; ">
     <div class="top">
         <h1>Stutent Information Collection</h1>
+        <h3>made by chetan yadav</h3>
         <h3>Please enter your details to get reward</h3>
        
     </div>
@@ -26,11 +28,19 @@
             <div class="form">
                 <form action="index.php" method="post">
                     <!-- <label for="form"></label> -->
-                    <input type="text" name="name : " placeholder="Name" require>
-                    <input type="text" name="roll no : " placeholder="Roll no" require>
-                    <input type="text" name="Email : " placeholder="Email" require>
+                    <input type="text" id="name"  name="name" placeholder="Name" require>
+                    <input type="text" id="roll_no"  name="roll_no" placeholder="Roll no" require>
+                    <input type="text" id="Email"  name="Email" placeholder="Email" require>
+                    <!-- <input type="submit"  id="submit" name="submit" value="submit"> -->
                     <button class="btn">Submit</button>
                 </form>
+                <div class="sucess">
+                    <?php
+    if($insert == true){
+        echo "<p class='sucess-message'>THANK  U  FOR  SUBMISSION  QT </p>";
+    }
+    ?>
+</div>
             </div>
         </div>
     </div>

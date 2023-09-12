@@ -1,4 +1,10 @@
-.top{font-family: 'Chakra Petch', sans-serif;
+*{
+margin: 0;padding: 0;
+}
+.top{
+    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Lobster', cursive;
+    font-family: 'Play', sans-serif;
     align-items: start;
     padding: 1%;
     padding-left: 70vh;
@@ -70,4 +76,23 @@ input{
     cursor: pointer;
     border-radius: 15px;
     margin-left: 50%;
+}
+.sucess-message {
+    color: rgb(8, 28, 8);
+    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Lobster', cursive;
+    background: rgb(99, 241, 156);
+    padding: 1vh;
+    border: 5px solid rgb(74, 29, 238);
+    margin-top: 13px;
+    border-radius: 12px;
+
+
+    text-align: center;
+    position: absolute;
+right: 550px;
+    /* width: 80%; */
+    /* justify-content: center; */
+    flex-direction: column;
+
 }

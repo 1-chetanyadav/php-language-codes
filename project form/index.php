@@ -15,7 +15,7 @@ if(isset($_POST['name'])) {
  $name = $_POST['name'];
  $roll_no = $_POST['roll_no'];
  $Email = $_POST['Email'];
- $sql = "INSERT INTO `formbca`.`form` ( `name` , `roll_no` , `Email` , `dt` )  VALUES 
+ $sql = "INSERT INTO `formbca`.`forms` ( `name` , `roll_no` , `Email` , `dt` )  VALUES 
  ('$name' , '$roll_no' , '$Email' , current_timestamp());";
  
  //echo $sql;
@@ -28,6 +28,7 @@ if(isset($_POST['name'])) {
        echo "Unsucessful Inserted $sql <br> $con->error";
      }
  $con->close();
+ $insert = true;
 } 
 ?>
 
@@ -40,23 +41,18 @@ if(isset($_POST['name'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<!-- <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300&display=swap" rel="stylesheet"> -->
+
 </head>
 
 <body>
-<?php
-    if($insert == true){
-        echo "thanks";
-    }
-    ?>
+
     <div class="main">
         <img src="lnct_mca.jpg" alt="bg" style=" position: absolute;
         width: 100%;
         z-index: -1; ">
     <div class="top">
         <h1>Stutent Information Collection</h1>
+        <h3>made by chetan yadav</h3>
         <h3>Please enter your details to get reward</h3>
        
     </div>
@@ -71,6 +67,13 @@ if(isset($_POST['name'])) {
                     <!-- <input type="submit"  id="submit" name="submit" value="submit"> -->
                     <button class="btn">Submit</button>
                 </form>
+                <div class="sucess">
+                    <?php
+    if($insert == true){
+        echo "<p class='sucess-message'>THANK  U  FOR  SUBMISSION  QT </p>";
+    }
+    ?>
+</div>
             </div>
         </div>
     </div>
